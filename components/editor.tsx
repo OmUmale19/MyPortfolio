@@ -16,9 +16,12 @@ const sectionMotion = {
   transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const },
 };
 
+const hiddenScrollClass =
+  "min-h-0 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden";
+
 export function Editor({ activeFile, onOpenFile }: EditorProps) {
   return (
-    <div className="scrollbar-thin flex-1 overflow-y-auto bg-[#0d1117] bg-grid bg-[size:24px_24px] p-4 sm:p-6 lg:p-8">
+    <div className="flex min-h-0 flex-1 overflow-hidden bg-[#0d1117] bg-grid bg-[size:24px_24px] p-4 sm:p-6 lg:p-8">
       {activeFile === "home.tsx" ? <HomeView onOpenFile={onOpenFile} /> : null}
       {activeFile === "about.tsx" ? <AboutView /> : null}
       {activeFile === "projects.tsx" ? <ProjectsView /> : null}
@@ -50,7 +53,10 @@ function EditorHeader({
 
 function HomeView({ onOpenFile }: { onOpenFile: (file: FileId) => void }) {
   return (
-    <motion.section {...sectionMotion} className="mx-auto max-w-5xl">
+    <motion.section
+      {...sectionMotion}
+      className={`mx-auto flex h-full min-h-0 max-w-5xl flex-1 flex-col ${hiddenScrollClass} pr-2`}
+    >
       <EditorHeader file="home.tsx" accent="#4fc1ff" lineHint="export default function Hero()" />
       <div className="grid gap-8 lg:grid-cols-[1.4fr_0.9fr]">
         <div className="space-y-6">
@@ -61,7 +67,7 @@ function HomeView({ onOpenFile }: { onOpenFile: (file: FileId) => void }) {
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-slate-300">{hero.tagline}</p>
           <div className="max-w-2xl rounded-2xl border border-border bg-white/5 p-4">
-            <p className="max-h-40 overflow-y-auto pr-2 text-sm leading-7 text-white [font-family:Arial,Helvetica,sans-serif]">
+            <p className="text-sm leading-7 text-white [font-family:Arial,Helvetica,sans-serif]">
               {hero.description}
             </p>
           </div>
@@ -82,7 +88,11 @@ function HomeView({ onOpenFile }: { onOpenFile: (file: FileId) => void }) {
             </button>
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-panel p-6">
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 5.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+          className="relative overflow-hidden rounded-3xl border border-border bg-panel p-6"
+        >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-success/10" />
           <div className="relative space-y-4">
             <div className="text-sm text-gold">// active stack</div>
@@ -101,7 +111,7 @@ function HomeView({ onOpenFile }: { onOpenFile: (file: FileId) => void }) {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
@@ -109,7 +119,10 @@ function HomeView({ onOpenFile }: { onOpenFile: (file: FileId) => void }) {
 
 function CompetitiveView() {
   return (
-    <motion.section {...sectionMotion} className="mx-auto max-w-5xl">
+    <motion.section
+      {...sectionMotion}
+      className={`mx-auto flex h-full min-h-0 max-w-5xl flex-1 flex-col ${hiddenScrollClass} pr-2`}
+    >
       <EditorHeader file="competitive.tsx" accent="#ff7b72" lineHint="function CompetitiveView()" />
       <div className="space-y-8">
         <div>
@@ -155,28 +168,31 @@ function CompetitiveView() {
 
 function AboutView() {
   return (
-    <motion.section {...sectionMotion} className="mx-auto max-w-5xl">
+    <motion.section
+      {...sectionMotion}
+      className={`mx-auto flex h-full min-h-0 max-w-5xl flex-1 flex-col ${hiddenScrollClass} pr-2`}
+    >
       <EditorHeader file="about.tsx" accent="#3fb950" lineHint="function AboutSection()" />
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-5">
+        <div className="space-y-2">
           <h2 className="text-3xl font-semibold text-white">{about.title}</h2>
           {about.body.map((paragraph) => (
-            <p key={paragraph} className="text-sm leading-8 text-slate-300">
+            <p key={paragraph} className="text-sm leading-6 text-slate-300 [font-family:Arial,Helvetica,sans-serif]">
               {paragraph}
             </p>
           ))}
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1">
           {about.stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.08 * index }}
-              className="rounded-2xl border border-border bg-panel p-5"
+              className="rounded-2xl border border-border bg-panel px-4 py-3"
             >
               <div className="text-xs uppercase tracking-[0.22em] text-muted">{stat.label}</div>
-              <div className="mt-3 text-2xl font-semibold text-accent">{stat.value}</div>
+              <div className="mt-1 text-xl font-semibold text-accent">{stat.value}</div>
             </motion.div>
           ))}
         </div>
@@ -187,7 +203,10 @@ function AboutView() {
 
 function ProjectsView() {
   return (
-    <motion.section {...sectionMotion} className="mx-auto max-w-6xl">
+    <motion.section
+      {...sectionMotion}
+      className={`mx-auto flex h-full min-h-0 max-w-6xl flex-1 flex-col ${hiddenScrollClass} pr-2`}
+    >
       <EditorHeader file="projects.tsx" accent="#ff7b72" lineHint="const projects = []" />
       <div className="mb-8 flex items-end justify-between gap-4">
         <div>
@@ -208,9 +227,12 @@ function ProjectsView() {
 
 function SkillsView() {
   return (
-    <motion.section {...sectionMotion} className="mx-auto max-w-5xl">
+    <motion.section
+      {...sectionMotion}
+      className={`mx-auto flex h-full min-h-0 max-w-5xl flex-1 flex-col ${hiddenScrollClass} pr-2`}
+    >
       <EditorHeader file="skills.json" accent="#e3b341" lineHint='{ "skills": [...] }' />
-      <div className="overflow-hidden rounded-3xl border border-border bg-panel">
+      <div className="rounded-3xl border border-border bg-panel">
         <div className="border-b border-border px-5 py-4 text-sm text-muted">
           JSON Viewer
         </div>
@@ -241,7 +263,10 @@ function SkillsView() {
 
 function ContactView() {
   return (
-    <motion.section {...sectionMotion} className="mx-auto max-w-5xl">
+    <motion.section
+      {...sectionMotion}
+      className={`mx-auto flex h-full min-h-0 max-w-5xl flex-1 flex-col ${hiddenScrollClass} pr-2`}
+    >
       <EditorHeader file="contact.tsx" accent="#4fc1ff" lineHint="return <ContactCard />" />
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="rounded-3xl border border-border bg-panel p-6">

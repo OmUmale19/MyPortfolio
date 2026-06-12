@@ -60,7 +60,7 @@ export function PortfolioShell() {
 
         <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#0b1017]/90 shadow-editor backdrop-blur">
           <Topbar />
-          <div className="flex min-h-[calc(100vh-6.5rem)] flex-col lg:flex-row">
+          <div className="flex h-[calc(100vh-6.5rem)] flex-col lg:flex-row">
             <Sidebar
               activeFile={activeFile}
               onOpenFile={openFile}

@@ -85,13 +85,13 @@ export const competitive = {
 export const about = {
   title: "About Me",
   body: [
-    "I am a developer focused on building products that blend clean engineering with strong visual design. I enjoy creating interfaces that feel alive without becoming noisy.",
-    "My workflow balances performance, maintainability, and motion. I care about developer tooling just as much as user-facing polish, which is why I love building systems that are both elegant to use and pleasant to maintain.",
+    "I am a full-stack developer focused on building products that blend clean engineering with strong visual design — interfaces that feel alive, where every interaction has intention. I recently graduated from Vishwakarma Institute of Technology, Pune with a B.Tech in Electronics and Telecommunication Engineering (CGPA: 8.02), carrying that systems-level thinking into every line of software I ship. My stack spans Next.js, TypeScript, Node.js, PostgreSQL, and Python — but what drives me isn't the tools, it's the problem. I care deeply about both ends of the experience: the user's and the developer's.",
+    "My workflow balances performance, maintainability, and motion. I write code I'd want to read six months later, design UIs I'd want to use at 2am, and build APIs I'd want to integrate on a deadline. Outside of building, I'm a Knight on LeetCode (600+ problems, max rating 1959) and a 3-star CodeChef competitor — someone who enjoys the constraint of algorithmic problems the way others enjoy puzzles. It keeps the fundamentals sharp and the instinct for clean solutions deeply ingrained.",
   ],
   stats: [
-    { label: "Years Building", value: "5+" },
-    { label: "Projects Shipped", value: "24" },
-    { label: "Core Stack", value: "Next.js" },
+    { label: "Years Building", value: "2+" },
+    { label: "Projects Shipped", value: "05" },
+    { label: "Core Stack", value: "Full Stack Applications" },
     { label: "Availability", value: "Open" },
   ],
 };

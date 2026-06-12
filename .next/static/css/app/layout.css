@@ -579,6 +579,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-\[calc\(100vh-6\.5rem\)\] {
+  height: calc(100vh - 6.5rem);
+}
 .max-h-40 {
   max-height: 10rem;
 }
@@ -957,6 +960,9 @@ video {
 .leading-tight {
   line-height: 1.25;
 }
+.leading-6 {
+  line-height: 1.5rem;
+}
 .tracking-\[0\.18em\] {
   letter-spacing: 0.18em;
 }
@@ -1053,8 +1059,14 @@ video {
 .duration-500 {
   transition-duration: 500ms;
 }
+.\[-ms-overflow-style\:none\] {
+  -ms-overflow-style: none;
+}
 .\[font-family\:Arial\2c Helvetica\2c sans-serif\] {
   font-family: Arial,Helvetica,sans-serif;
+}
+.\[scrollbar-width\:none\] {
+  scrollbar-width: none;
 }
 
 :root {
@@ -1264,6 +1276,13 @@ textarea {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
+}
+
+.\[\&\:\:-webkit-scrollbar\]\:hidden::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
 
   .lg\:\[\&\:nth-last-child\(-n\+2\)\]\:border-b-0:nth-last-child(-n+2) {
     border-bottom-width: 0px;
