@@ -37,7 +37,7 @@ export const hero = {
   tagline:
     "I build polished web experiences that feel fast, intuitive, and memorable.",
   description:
-    "I'm a Software Engineer with a B.Tech in Electronics and Telecommunication Engineering from Vishwakarma Institute of Technology, Pune. I'm passionate about building intelligent, full-stack systems at the intersection of software engineering and AI — turning complex problems into clean, performant products.My work spans frontend and backend development, AI/ML pipelines, cloud infrastructure, and real-time data systems. I've built end-to-end platforms featuring automated transaction tracking, anomaly detection, and voice-driven AI interfaces — always with a focus on measurable, real-world impact.",
+    "I'm a Software Engineer and recent graduate from Vishwakarma Institute of Technology, Pune. I enjoy building full-stack applications, AI-powered tools, and scalable systems that solve real-world problems. With experience across modern web technologies, backend development, and AI, I focus on creating products that are fast, reliable, and genuinely useful.",
   primaryCta: {
     label: "View Projects",
     target: "projects.tsx" as FileId,
@@ -85,8 +85,8 @@ export const competitive = {
 export const about = {
   title: "About Me",
   body: [
-    "I am a full-stack developer focused on building products that blend clean engineering with strong visual design — interfaces that feel alive, where every interaction has intention. I recently graduated from Vishwakarma Institute of Technology, Pune with a B.Tech in Electronics and Telecommunication Engineering (CGPA: 8.02), carrying that systems-level thinking into every line of software I ship. My stack spans Next.js, TypeScript, Node.js, PostgreSQL, and Python — but what drives me isn't the tools, it's the problem. I care deeply about both ends of the experience: the user's and the developer's.",
-    "My workflow balances performance, maintainability, and motion. I write code I'd want to read six months later, design UIs I'd want to use at 2am, and build APIs I'd want to integrate on a deadline. Outside of building, I'm a Knight on LeetCode (600+ problems, max rating 1959) and a 3-star CodeChef competitor — someone who enjoys the constraint of algorithmic problems the way others enjoy puzzles. It keeps the fundamentals sharp and the instinct for clean solutions deeply ingrained.",
+    "I'm a full-stack developer who enjoys turning ideas into products that are both functional and enjoyable to use. I recently graduated from Vishwakarma Institute of Technology, Pune with a B.Tech in Electronics and Telecommunication Engineering (CGPA: 8.02). My background in engineering taught me how to approach problems systematically, and I bring that mindset into every project I build. I primarily work with Next.js, TypeScript, Node.js, PostgreSQL, and Python, focusing on creating scalable applications with clean architecture and intuitive user experiences.",
+    "What excites me most about software development is the combination of problem-solving and creativity. I enjoy building everything from responsive frontends to reliable backend systems, always paying attention to performance, maintainability, and user experience. Outside of development, I actively practice competitive programming and data structures & algorithms, having solved 900+ problems across platforms. As a Knight on LeetCode (max rating 1959) and a 3-star CodeChef competitor, I enjoy tackling challenging problems that strengthen my analytical thinking and help me write better software."
   ],
   stats: [
     { label: "Years Building", value: "2+" },
